@@ -9,3 +9,29 @@ def start_page(request):
 
 def all_posts(request):
     return render(request, 'blog/list_detail.html')
+
+
+def info_name(request, строка: str):
+    return render(request, 'blog/detail_by_name.html', {"строка": строка})
+
+
+def info_number(request, номер: int):
+    return render(request, 'blog/detail_by_number.html', {"номер": номер})
+
+
+def post_about_keanu(request):
+    data = {
+        "year_born": '1964 г.',
+        'city_born': 'Бейрут',
+        'movie_name': 'На гребне волны',
+    }
+    return render(request, 'blog/keanu_rivs.html', context=data)
+
+
+def post_about_guinness(request):
+    context = {
+        'power_man': 'Narve Laeret',
+        'bar_name': 'Bob’s BBQ & Grill',
+        'count_needle': 1790,
+    }
+    return render(request, 'blog/guinnessworldrecords.html', context=context)
