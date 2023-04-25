@@ -24,5 +24,6 @@ urlpatterns = [
     path('posts/<int:номер>', views.info_number),
     path('posts/<str:строка>', views.info_name),
     path('posts/Keanu', views.post_about_keanu),
-    path('posts/guinness', views.post_about_guinness)
+    path('posts/guinness', views.post_about_guinness),
+    path('people', views.people_data),
 ]

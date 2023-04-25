@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.loader import render_to_string
 
+
 def start_page(request):
     response = render_to_string('blog/index.html')
     return HttpResponse(response)
@@ -35,3 +36,19 @@ def post_about_guinness(request):
         'count_needle': 1790,
     }
     return render(request, 'blog/guinnessworldrecords.html', context=context)
+
+
+def people_data(request):
+    people = [
+        'Жукова Анна Константиновна',
+        'Юлия Степановна Потапова',
+        'Гущин Аполлинарий Тимурович',
+        'Дорофей Ярославович Третьяков',
+        'Селезнева Анна Тарасовна',
+        'Федотов Симон Харлампьевич',
+        'Красильникова Вера Борисовна',
+        'Бажен Тихонович Костин',
+        'Веселова Анжелика Тимофеевна',
+        'Щербаков Самсон Феодосьевич'
+    ]
+    return render(request, 'blog/people.html', context={'people': people})
