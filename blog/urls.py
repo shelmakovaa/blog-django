@@ -26,4 +26,5 @@ urlpatterns = [
     path('posts/Keanu', views.post_about_keanu),
     path('posts/guinness', views.post_about_guinness),
     path('people', views.people_data),
+    path('people2', views.people_data2),
 ]
