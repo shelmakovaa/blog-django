@@ -1,11 +1,8 @@
-from django.http import HttpResponse
 from django.shortcuts import render
-from django.template.loader import render_to_string
 
 
 def start_page(request):
-    response = render_to_string('blog/index.html')
-    return HttpResponse(response)
+    return render(request, 'blog/index.html')
 
 
 def all_posts(request):
