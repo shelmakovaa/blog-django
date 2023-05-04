@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from random import randrange
 
 
 def start_page(request):
@@ -48,7 +49,13 @@ def start_page(request):
         },
     ]
 
-    return render(request, 'blog/index.html', context={'posts': posts})
+    indexes = []
+    while len(indexes) < 3:
+        temp = randrange(len(posts))
+        if temp not in indexes:
+            indexes.append(temp)
+    post_to_show = [posts[i] for i in indexes]
+    return render(request, 'blog/index.html', context={'posts': post_to_show})
 
 
 def all_posts(request):
